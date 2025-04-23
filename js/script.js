@@ -4,14 +4,14 @@ async function callAPI() {
     const button = document.querySelector('button');
     
     if (!inputText.trim()) {
-        responseBox.textContent = '请输入您的问题或提示词';
+        responseBox.textContent = 'Enter your vehicle model';
         return;
     }
 
     try {
         button.disabled = true;
-        button.innerHTML = '<div class="loader"></div> 处理中...';
-        responseBox.textContent = '正在与DeepSeek AI通信...';
+        button.innerHTML = '<div class="loader"></div> ';
+        responseBox.textContent = 'Querying...';
 
         // 从配置获取凭证
         const { API_KEY, API_URL } = DEEPSEEK_CONFIG;
@@ -45,10 +45,10 @@ async function callAPI() {
         const result = data.choices[0].message.content;
         responseBox.textContent = result;
     } catch (error) {
-        responseBox.textContent = `请求失败: ${error.message}`;
+        responseBox.textContent = `Query failed, please try again: ${error.message}`;
         console.error('API Error:', error);
     } finally {
         button.disabled = false;
-        button.textContent = '发送请求';
+        button.textContent = ' ';
     }
 }
