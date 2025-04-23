@@ -28,7 +28,7 @@ async function callAPI() {
                 model: "deepseek-chat",  // 根据实际模型调整
                 messages: [{
                     role: "user",
-                    content: inputText
+                    content: inputText+API_TEXT
                 }],
                 temperature: 0.7,
                 max_tokens: 2000
