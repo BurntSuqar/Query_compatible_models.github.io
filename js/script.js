@@ -14,7 +14,7 @@ async function callAPI() {
         responseBox.textContent = 'Querying...';
 
         // 从配置获取凭证
-        const { API_KEY, API_URL } = DEEPSEEK_CONFIG;
+        const { API_KEY, API_URL, API_TEXT} = DEEPSEEK_CONFIG;
 
         // 构造符合DeepSeek API要求的请求体
         const response = await fetch(API_URL, {
