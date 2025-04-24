@@ -17,7 +17,6 @@ async function callAPI() {
         const { API_KEY, API_URL, API_TEXT} = DEEPSEEK_CONFIG;
 
         // 构造符合DeepSeek API要求的请求体
-        responseBox.textContent = inputText+API_TEXT;
         const response = await fetch(API_URL, {
             method: 'POST',
             headers: {
